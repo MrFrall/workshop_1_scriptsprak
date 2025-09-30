@@ -7,6 +7,10 @@ data = json.load(open("network_devices.json","r",encoding = "utf-8"))
 # Create a variable that holds our whole text report
 report = ""
 
+#DEL A
+#Läs in JSON-filen och visa företagsnamn och när data senast uppdaterades
+report += "Company Name" + data["company"] + "\n"
+
 # loop through the location list 
 for location in data["locations"]:
 
