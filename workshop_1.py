@@ -9,7 +9,9 @@ report = ""
 
 #DEL A
 #Läs in JSON-filen och visa företagsnamn och när data senast uppdaterades
-report += "Company Name" + data["company"] + "\n"
+report += "Company Name: " + data["company"] + "\n\n"
+
+report += "Last updated: " + data["last_updated"] + "\n\n"
 
 # loop through the location list 
 for location in data["locations"]:
