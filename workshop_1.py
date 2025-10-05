@@ -5,13 +5,15 @@ import json
 data = json.load(open("network_devices.json","r",encoding = "utf-8"))
 
 # Create a variable that holds our whole text report
-report = "-----------------------------------------------------------------------------------------" + "\n"
+intro_report = "-----------------------------------------------------------------------------------------" + "\n"
+exec_report = ""
+report = " "
 
 #DEL A
 # 1: Läs in JSON-filen och visa företagsnamn och när data senast uppdaterades
-report += "Company Name: " + data["company"] + "\n"
+intro_report += "Company Name: " + data["company"] + "\n"
 
-report += "Last updated: " + data["last_updated"] + "\n\n"
+intro_report += "Last updated: " + data["last_updated"] + "\n"
 
 # 2: Lista alla enheter med status "offline" eller "warning"
 report += "--- Devices with Problem ---" +"\n"
@@ -356,7 +358,54 @@ report += "Kontor Malmö: (Malmö)" + "\n" + "Units: " + str(malmo_units) + " | 
 report += "Lager: (Göteborg)" + "\n" + "Units: " + str(lager_units) + " | Online: " + str(lager_status_online) + " | Offline: " + str(lager_status_offline) + " | Warning: " + str(lager_status_warning) + "\n\n"
 report += "Säkerhetskopia: (Umeå)" + "\n" + "Units: " + str(sakerhetskopia_units) + " | Online: " + str(sakerhetskopia_status_online) + " | Offline: " + str(sakerhetskopia_status_offline) + " | Warning: " + str(sakerhetskopia_status_warning) + "\n\n"
 
+report += "-----------------------------------------------------------------------------------------" + "\n"
+report += "------------------------------------- RAPPORT SLUT --------------------------------------" + "\n"
+report += "-----------------------------------------------------------------------------------------" + "\n"
+
+
+# VG Uppgifter 
+
+# 8: Identifiera enheter med potentiella problem (t.ex. hög portanvändning >80%, låg uptime, offline-status)
+
+# 9: Generera en professionell rapport med sektioner och tydlig formatering
+
+# 10: Inkludera en “Executive Summary” med de viktigaste problemen högst upp
+
+all_offline = 0
+all_warning = 0
+
+for location in data["locations"]:
+    for device in location["devices"]:
+        if device["status"] == "offline":
+            all_offline += 1
+        elif device["status"] == "warning":
+            all_warning += 1
+
+all_low_uptime = 0
+
+for location in data["locations"]:
+    for device in location["devices"]:
+        if device["uptime_days"] <= 30:
+            all_low_uptime += 1
+
+all_switches_high_usage = 0
+
+for location in data["locations"]:
+    for device in location["devices"]:
+        if device["type"] == "switch":
+            if device["ports"]["used"] / device["ports"]["total"] * 100 > 80:
+                all_switches_high_usage += 1
+
+exec_report += "\n" 
+exec_report += "⚠ Critical: " + str(all_offline) + " Units offline - Need fixing ASAP - Check below to troubleshoot what Devices are offline" + "\n"
+exec_report += "⚠ Warning: " + str(all_warning) + " Units with warning status - Troubleshoot and fix issue" + "\n"
+exec_report += "⚠ " + str(all_low_uptime) + " Units with low uptime - Could indicate instability "+ "\n"
+exec_report += "⚠ " + str(all_switches_high_usage) + " Switches with over 80% port usage - Time for upgrade?"+ "\n"
+
+exec_report += "\n" 
 
 # write the report to text file
 with open('report.txt', 'w', encoding='utf-8') as f:
+    f.write(intro_report)
+    f.write(exec_report)
     f.write(report)

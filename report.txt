@@ -2,7 +2,12 @@
 Company Name: TechCorp AB
 Last updated: 2024-09-30 10:30:00
 
---- Devices with Problem ---
+⚠ Critical: 2 Units offline - Need fixing ASAP - Check below to troubleshoot what Devices are offline
+⚠ Warning: 3 Units with warning status - Troubleshoot and fix issue
+⚠ 9 Units with low uptime - Could indicate instability 
+⚠ 11 Switches with over 80% port usage - Time for upgrade?
+
+ --- Devices with Problem ---
 -----------------------------------------------------------------------------------------
 --- Status: Offline --- 
 Huvudkontor     | SW-ACCESS-03    | switch          | 192.168.1.5    
@@ -64,3 +69,6 @@ Units: 5 | Online: 3 | Offline: 1 | Warning: 1
 Säkerhetskopia: (Umeå)
 Units: 3 | Online: 3 | Offline: 0 | Warning: 0
 
+-----------------------------------------------------------------------------------------
+------------------------------------- RAPPORT SLUT --------------------------------------
+-----------------------------------------------------------------------------------------
