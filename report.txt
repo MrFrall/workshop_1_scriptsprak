@@ -1,9 +1,9 @@
-
+-----------------------------------------------------------------------------------------
 Company Name: TechCorp AB
 Last updated: 2024-09-30 10:30:00
 
 --- Devices with Problem ---
-
+-----------------------------------------------------------------------------------------
 --- Status: Offline --- 
 Huvudkontor     | SW-ACCESS-03    | switch          | 192.168.1.5    
 Lager           | AP-LAGER-02     | access_point    | 192.168.200.102
@@ -14,61 +14,53 @@ Lager           | RT-LAGER-01     | router          | 192.168.2.254
 Datacenter      | SW-DC-TOR-02    | switch          | 10.0.1.2       
 
 --- Total number of unit types ---
-
+-----------------------------------------------------------------------------------------
 Switch:                     18 st
 Router:                      6 st
 Access Point:                9 st
 Firewall:                    5 st
 Load Balancer:               2 st
 
+--- Units with low uptime (<30 Days) ---
+-----------------------------------------------------------------------------------------
+Huvudkontor     | SW-ACCESS-03    | 0  Uptime days | Current status: offline
+Huvudkontor     | SW-ACCESS-05    | 15 Uptime days | Current status: online
+Huvudkontor     | AP-FLOOR2-01    | 12 Uptime days | Current status: online
+Huvudkontor     | AP-FLOOR2-02    | 2  Uptime days | Current status: warning
+Lager           | SW-LAGER-02     | 23 Uptime days | Current status: online
+Lager           | RT-LAGER-01     | 2  Uptime days | Current status: warning
+Lager           | AP-LAGER-02     | 0  Uptime days | Current status: offline
+Kontor Malmö    | SW-MAL-ACC-02   | 8  Uptime days | Current status: online
+Datacenter      | SW-DC-TOR-02    | 5  Uptime days | Current status: warning
 
+--- Port usage: Switches ---
+-----------------------------------------------------------------------------------------
+Site           Switchar       Used/Total     % Usage        
+Huvudkontor    7st            162 / 216      75.0%
+Datacenter     5st            231 / 240      96.2% - Warning few ports remaining
+Kontor Malmö   3st            79 / 96        82.3% - Warning few ports remaining
+Lager          2st            57 / 96        59.4%
+Säkerhetskopia 2st            12 / 28        42.9%
 
-Huvudkontor
-  SW-CORE-01
-  SW-CORE-02
-  SW-DIST-01
-  SW-DIST-02
-  SW-ACCESS-03
-  SW-ACCESS-04
-  SW-ACCESS-05
-  RT-EDGE-01
-  RT-EDGE-02
-  AP-FLOOR1-01
-  AP-FLOOR1-02
-  AP-FLOOR2-01
-  AP-FLOOR2-02
-  AP-FLOOR3-01
-  FW-DMZ-01
+--- Unique Vlans in network ---
+-----------------------------------------------------------------------------------------
+Total number of Vlans: 19
+Individual Vlans: [10, 20, 30, 40, 50, 100, 110, 120, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 2100]
 
-Lager
-  SW-LAGER-01
-  SW-LAGER-02
-  RT-LAGER-01
-  AP-LAGER-01
-  AP-LAGER-02
+--- Statistics per location ---
+-----------------------------------------------------------------------------------------
+Huvudkontor (Stockholm):
+Units: 15 | Online: 13 | Offline: 1 | Warning: 1
 
-Kontor Malmö
-  SW-MAL-CORE-01
-  SW-MAL-ACC-01
-  SW-MAL-ACC-02
-  RT-MAL-01
-  AP-MAL-01
-  AP-MAL-02
-  FW-MAL-01
+Datacenter: (Stockholm)
+Units: 10 | Online: 9 | Offline: 0 | Warning: 1
 
-Datacenter
-  SW-DC-CORE-01
-  SW-DC-CORE-02
-  SW-DC-TOR-01
-  SW-DC-TOR-02
-  SW-DC-TOR-03
-  RT-DC-EDGE-01
-  FW-DC-01
-  FW-DC-02
-  LB-DC-01
-  LB-DC-02
+Kontor Malmö: (Malmö)
+Units: 7 | Online: 7 | Offline: 0 | Warning: 0
 
-Säkerhetskopia
-  SW-DR-01
-  RT-DR-01
-  FW-DR-01
+Lager: (Göteborg)
+Units: 5 | Online: 3 | Offline: 1 | Warning: 1
+
+Säkerhetskopia: (Umeå)
+Units: 3 | Online: 3 | Offline: 0 | Warning: 0
+
