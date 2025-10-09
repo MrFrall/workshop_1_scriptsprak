@@ -195,27 +195,27 @@ procent_malmo_swport = (malmo_used_ports / malmo_total_ports) * 100
 procent_lager_swport = (lager_used_ports / lager_total_ports) * 100
 procent_sakerhetskopia_swport = (sakerhetskopia_used_ports / sakerhetskopia_total_ports) * 100
 
-report += "Huvudkontor".ljust(15) + str(huvudkontor_switches) + "st".ljust(14) + str(huvudkontor_used_ports) + " / " + str(huvudkontor_total_ports) + str(round(procent_huvudkontor_swport, 1)).rjust(10) + "%" 
+report += "Huvudkontor".ljust(15) + str(huvudkontor_switches) + "st".ljust(14) + (str(huvudkontor_used_ports) + " / " + str(huvudkontor_total_ports)).ljust(9) + str(round(procent_huvudkontor_swport, 1)).rjust(10) + "%" 
 if procent_huvudkontor_swport > 80:
      report += " - Warning few ports remaining" + "\n"
 else:
     report += "\n"
-report += "Datacenter".ljust(15) + str(datacenter_switches) + "st".ljust(14) + str(datacenter_used_ports) + " / " + str(datacenter_total_ports) + str(round(procent_datacenter_swport, 1)).rjust(10) + "%" 
+report += "Datacenter".ljust(15) + str(datacenter_switches) + "st".ljust(14) + (str(datacenter_used_ports) + " / " + str(datacenter_total_ports)).ljust(9) + str(round(procent_datacenter_swport, 1)).rjust(10) + "%" 
 if procent_datacenter_swport > 80:
     report += " - Warning few ports remaining" + "\n"
 else:
     report += "\n"
-report += "Kontor Malmö".ljust(15) + str(malmo_switches) + "st".ljust(14) + str(malmo_used_ports) + " / " + str(malmo_total_ports) + str(round(procent_malmo_swport, 1)).rjust(12) + "%" 
+report += "Kontor Malmö".ljust(15) + str(malmo_switches) + "st".ljust(14) + (str(malmo_used_ports) + " / " + str(malmo_total_ports)).ljust(9) + str(round(procent_malmo_swport, 1)).rjust(10) + "%" 
 if procent_malmo_swport > 80:
     report += " - Warning few ports remaining" + "\n"
 else:
     report += "\n"
-report += "Lager".ljust(15) + str(lager_switches) + "st".ljust(14) + str(lager_used_ports) + " / " + str(lager_total_ports) + str(round(procent_lager_swport, 1)).rjust(12)+ "%" 
+report += "Lager".ljust(15) + str(lager_switches) + "st".ljust(14) + (str(lager_used_ports) + " / " + str(lager_total_ports)).ljust(9) + str(round(procent_lager_swport, 1)).rjust(10)+ "%" 
 if procent_lager_swport > 80:
     report += " - Warning few ports remaining" + "\n"
 else:
     report += "\n"
-report += "Säkerhetskopia".ljust(15) + str(lager_switches) + "st".ljust(14) + str(sakerhetskopia_used_ports) + " / " + str(sakerhetskopia_total_ports) + str(round(procent_sakerhetskopia_swport, 1)).rjust(12) + "%" 
+report += "Säkerhetskopia".ljust(15) + str(lager_switches) + "st".ljust(14) + (str(sakerhetskopia_used_ports) + " / " + str(sakerhetskopia_total_ports)).ljust(9) + str(round(procent_sakerhetskopia_swport, 1)).rjust(10) + "%" 
 if procent_sakerhetskopia_swport > 80:
     report += " - Warning few ports remaining" + "\n"
 else:
